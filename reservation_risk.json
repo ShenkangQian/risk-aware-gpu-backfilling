@@ -1,0 +1,33 @@
+{
+  "status": "synthetic scheduling counterexample",
+  "units": "arbitrary consistent time units",
+  "assumptions": "four identical GPUs, non-preemptive fixed-duration jobs, no interference or failures",
+  "safe_backfill": {
+    "actual_backfill_runtime": 7,
+    "original_reservation": 10,
+    "actual_head_start": 10,
+    "reservation_delay": 0,
+    "runtime_exceeds_upper": false,
+    "allocated_gpu_fraction_before_original_reservation": 0.85
+  },
+  "overrun_backfill": {
+    "actual_backfill_runtime": 12,
+    "original_reservation": 10,
+    "actual_head_start": 12,
+    "reservation_delay": 2,
+    "runtime_exceeds_upper": true,
+    "allocated_gpu_fraction_before_original_reservation": 1.0
+  },
+  "selection_counterexample": {
+    "overall_marginal_bound_coverage": 0.95,
+    "selected_subgroup_bound_coverage": 0.5,
+    "construction": "90% group never exceeds bound; 10% group exceeds with probability 50%; scheduler selects latter group"
+  },
+  "independent_three_job_illustration": {
+    "individual_coverage": 0.95,
+    "all_three_coverage_if_independent": 0.8573749999999999,
+    "at_least_one_exceedance_if_independent": 0.1426250000000001,
+    "warning": "This is an independence-based illustration, not an assumption about real jobs."
+  },
+  "limits": "Allocated GPU fraction is not measured hardware utilization. No proposed scheduler improvement is demonstrated."
+}
