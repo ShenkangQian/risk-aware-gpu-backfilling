@@ -15,7 +15,7 @@ g_{\mathrm{running}}+g_{\mathrm{backfill}}\leq4,\qquad
 U_{\mathrm{backfill}}\leq10.
 $$
 
-Jobs are non-preemptive, start at time zero in this example, have fixed durations, and do not interfere with one another. If the candidate's actual runtime is $T$, the protected job starts at
+The running and backfill jobs start at time zero. All jobs are non-preemptive, have fixed durations, and do not interfere with one another. If the candidate's actual runtime is $T$, the protected job starts at
 
 $$
 t_{\mathrm{head}}=\max(10,T),\qquad
@@ -77,7 +77,7 @@ python3 reservation_risk.py
 
 The script uses only the Python standard library. Assertions check the resource feasibility, the two reservation delays, and the population miss-rate calculation. It writes [reservation_risk.json](reservation_risk.json), containing both replays, the selection example, and the three-job calculation.
 
-The entire computation is in [reservation_risk.py](reservation_risk.py). Time units are arbitrary but consistent. Allocated GPU fraction describes reservations over time; it is not a measurement of device activity or computational throughput.
+The entire computation is in [reservation_risk.py](reservation_risk.py). Time units are arbitrary but consistent. Allocated GPU fraction describes allocated capacity over time; it is not a measurement of device activity or computational throughput.
 
 ## Design of a workload evaluation
 
